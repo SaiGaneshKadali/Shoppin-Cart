@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Cart(props) {
   const { cart, setCart } = props;
@@ -75,8 +76,13 @@ function Cart(props) {
   return (
     <div className="cart-page">
       {cart && cart.length === 0 ? (
+        <div>
         <p className="cart-head">Your Cart is Empty</p>
-      ) : (
+        <Link to="/" className="continue-shopping-link">
+          Continue Shopping
+        </Link>
+      </div>
+        ) : (
         <>
           <table className="cart-table">
             <thead>
